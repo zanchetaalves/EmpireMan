@@ -12,7 +12,7 @@ namespace EmpireMan.Data.Mappings
 
             builder.Property(x => x.Descricao)
                 .IsRequired()
-                .HasColumnType("varchar(150)");
+                .HasColumnType("nvarchar(150)");
 
             builder.HasMany(x => x.Produtos)
                 .WithOne(x => x.Categoria)

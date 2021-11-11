@@ -12,17 +12,17 @@ namespace EmpireMan.Data.Mappings
 
             builder.Property(x => x.Descricao)
                 .IsRequired()
-                .HasColumnType("varchar(200)");
+                .HasColumnType("nvarchar(200)");
 
             builder.Property(x => x.CodigoBarras)
-                .HasColumnType("varchar(100)");
+                .HasColumnType("nvarchar(100)");
 
             builder.Property(x => x.Imagem)
                 .HasColumnType("image");
 
             builder.Property(x => x.Valor)
                 .IsRequired()
-                .HasColumnType("decimal(10,2)");
+                .HasColumnType("decimal(18,2)");
 
             builder.Property(x => x.DataCadastro)
                 .IsRequired()

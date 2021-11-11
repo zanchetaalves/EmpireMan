@@ -12,14 +12,14 @@ namespace EmpireMan.Data.Mappings
 
             builder.Property(x => x.Nome)
                 .IsRequired()
-                .HasColumnType("varchar(100)");
+                .HasColumnType("nvarchar(100)");
 
             builder.Property(x => x.Cpf)
                 .IsRequired()
-                .HasColumnType("varchar(11)");
+                .HasColumnType("nvarchar(11)");
 
             builder.Property(x => x.Rg)
-                .HasColumnType("varchar(10)");
+                .HasColumnType("nvarchar(10)");
 
             builder.Property(x => x.DataNascimento)
                 .IsRequired()

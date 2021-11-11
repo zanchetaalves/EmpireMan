@@ -12,31 +12,29 @@ namespace EmpireMan.Data.Mappings
 
             builder.Property(x => x.Logradouro)
                 .IsRequired()
-                .HasColumnType("varchar(150)");
+                .HasColumnType("nvarchar(150)");
 
             builder.Property(x => x.Numero)
-                .IsRequired()
-                .HasColumnType("varchar(50)");
+                .HasColumnType("nvarchar(50)");
 
             builder.Property(x => x.Complemento)
-                .IsRequired()
-                .HasColumnType("varchar(150)");
+                .HasColumnType("nvarchar(150)");
 
             builder.Property(x => x.Cep)
                 .IsRequired()
-                .HasColumnType("varchar(8)");
+                .HasColumnType("nvarchar(8)");
 
             builder.Property(x => x.Bairro)
                 .IsRequired()
-                .HasColumnType("varchar(100)");
+                .HasColumnType("nvarchar(100)");
 
             builder.Property(x => x.Cidade)
                 .IsRequired()
-                .HasColumnType("varchar(100)");
+                .HasColumnType("nvarchar(100)");
 
             builder.Property(x => x.Estado)
                 .IsRequired()
-                .HasColumnType("varchar(2)");
+                .HasColumnType("nvarchar(2)");
 
             builder.ToTable("ClienteEnderecos");
         }
