@@ -10,10 +10,16 @@ using System.Threading.Tasks;
 
 namespace EmpireMan.Data.Repository
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity, new()
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity, new()
     {
         protected readonly EmpireDbContext Db;
         protected readonly DbSet<TEntity> DbSet;
+
+        public Repository(EmpireDbContext db)
+        {
+            Db = db;
+            DbSet = db.Set<TEntity>();
+        }
 
         public async Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate)
         {
