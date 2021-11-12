@@ -10,6 +10,10 @@ namespace EmpireMan.App.ViewModels
         [Key]
         public int Id { get; set; }
 
+        [DisplayName("Categoria")]
+        [Required(ErrorMessage = "O campo {0} é obrigatório.")]
+        public int CategoriaId { get; set; }
+
         [DisplayName("Descrição")]
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         [MaxLength(100)]
