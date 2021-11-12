@@ -9,6 +9,9 @@ using EmpireMan.App.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using EmpireMan.App.Configurations;
+using EmpireMan.Business.Interfaces;
+using EmpireMan.Data.Repository;
+using AutoMapper;
 
 namespace EmpireMan.App
 {
@@ -38,6 +41,16 @@ namespace EmpireMan.App
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<EmpireDbContext>();
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_2);
+
+            services.AddScoped<EmpireDbContext>();
+            services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+            services.AddScoped<IClienteEnderecoRepository, ClienteEnderecoRepository>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
